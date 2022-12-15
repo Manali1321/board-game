@@ -4,28 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/index.css" />
     <title>Ball game</title>
   </head>
   <body>
     <header>
       <h1>Ball game</h1>
     </header>
+    <aside id="show_count"></aside>
     <main id="screen">
       <div
-        class="ball"
-        onmouseenter="disappear()"
-        onmouseleave="startGame()"
+        class="ball ball-1"
+        onmouseenter="disappear(0)"
+        onmouseleave="reset(0)"
       ></div>
       <div
-        class="ball"
-        onmouseenter="disappear()"
-        onmouseleave="startGame()"
+        class="ball ball-2"
+        onmouseenter="disappear(1)"
+        onmouseleave="reset(1)"
       ></div>
       <div
-        class="ball"
-        onmouseenter="disappear()"
-        onmouseleave="startGame()"
+        class="ball ball-3"
+        onmouseenter="disappear(2)"
+        onmouseleave="reset(2)"
       ></div>
       <div id="game-over">Game Over</div>
     </main>
