@@ -19,19 +19,23 @@ function gameOverEvent() {
         board_wrapper.style.display = 'none';
         dispay_game_over.style.display = 'flex';
     }
+    // https://stackoverflow.com/questions/20707519/div-square-width-size-based-on-100-height
+    // https://www.w3schools.com/js/js_random.asp
+    // https://stackoverflow.com/questions/20707519/div-square-width-size-based-on-100-height
 }
 
 function startGame() {
+    console.log(board.width);
     balls.forEach(ball => {
         ball.classList.add('ball-move');
         ball.classList.remove('hide');
-        ball.style.left = Math.floor(Math.random() * 400 + 1) + 'px';
+        ball.style.left = Math.floor(Math.random() * 90 + 1) + '%';
     });
 }
 function reset(num) {
     balls[num].classList.remove('hide');
     balls[num].classList.add('ball-move');
-    balls[num].style.left = Math.floor(Math.random() * 400 + 1) + 'px';
+    balls[num].style.left = Math.floor(Math.random() * 90 + 1) + '%';
     console.log(balls[num].style.left);
     ballCount += 1;
     console.log(ballCount);

@@ -22,7 +22,7 @@ header{
 }
 
 #board {
-  max-width: 600px;
+  width: 600px;
   height: 549px;
   background-color: chocolate;
   border: black 50px solid;
@@ -39,7 +39,7 @@ header{
   position: absolute;
 }
 .ball-move {
-  animation: ball-move 3s infinite linear;
+  animation: ball-move 8s infinite linear;
   animation-iteration-count: 1;
 }
 .ball-1 {
@@ -126,7 +126,12 @@ footer{
 footer p{
   padding: 10px 0;
 }
-@media screen and (max-width: 700px) {
-  
-}
+@media screen and (max-width: 600px) {
+  #board {
+    max-width: 90vw;
+    height: 549px;
+    background-color: chocolate;
+    border: black 30px solid;
 
+}
+}
