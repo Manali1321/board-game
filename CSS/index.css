@@ -22,7 +22,7 @@ header{
 }
 
 #board {
-  width: 600px;
+  max-width: 600px;
   height: 549px;
   background-color: chocolate;
   border: black 50px solid;
