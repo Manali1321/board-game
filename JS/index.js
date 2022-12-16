@@ -10,7 +10,6 @@ balls[1].addEventListener('animationend', gameOverEvent);
 balls[2].addEventListener('animationend', gameOverEvent);
 
 dispay_game_over.style.display = 'none';
-
 function gameOverEvent() {
     balls[0].style.animationPlayState = 'paused';
     balls[1].style.animationPlayState = 'paused';
@@ -19,12 +18,10 @@ function gameOverEvent() {
         board_wrapper.style.display = 'none';
         dispay_game_over.style.display = 'flex';
     }
-    // https://stackoverflow.com/questions/20707519/div-square-width-size-based-on-100-height
-    // https://www.w3schools.com/js/js_random.asp
-    // https://stackoverflow.com/questions/20707519/div-square-width-size-based-on-100-height
 }
 
 function startGame() {
+
     console.log(board.width);
     balls.forEach(ball => {
         ball.classList.add('ball-move');
