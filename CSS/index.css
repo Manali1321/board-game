@@ -11,6 +11,12 @@ html{
   box-sizing: inherit;
 }
 
+#container{
+  display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
 header{
   font-family: 'Shojumaru', cursive;
   background-color: black;
@@ -28,9 +34,6 @@ header{
   border: black 50px solid;
   margin: 60px auto;
   position: relative;
-}
-#board-wrapper{
-  height:calc(100vh - 172.5px);
 }
 .ball {
   width: 50px;
