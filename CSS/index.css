@@ -1,10 +1,36 @@
-#screen {
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+
+*{
+  margin: 0;
+  padding:0;
+}
+html{
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+header{
+  font-family: 'Shojumaru', cursive;
+  background-color: black;
+  color: white;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#board {
   width: 600px;
-  height: 600px;
+  height: 549px;
   background-color: chocolate;
   border: black 50px solid;
-  margin: auto;
+  margin: 60px auto;
   position: relative;
+}
+#board-wrapper{
+  height:calc(100vh - 172.5px);
 }
 .ball {
   width: 50px;
@@ -39,14 +65,68 @@
   }
 }
 
-button {
+#board-wrapper button {
   width: 100px;
   height: 30px;
   background-color: chocolate;
   border: black 2px solid;
+  margin-bottom: 20px;
 }
 section {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
 }
+#hidden{
+  width: 100vw;
+  height:calc(100vh - 112.5px);
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+#game-over{
+  font-size: 30px;
+  text-align: center;
+}
+#restart-btn{
+  margin: 15px;
+  padding: 7px 30px;
+}
+#face{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin: 0 auto;
+}
+.eye{
+width: 20px;
+height: 20px;
+border-radius: 50%;
+border: 2px solid white ;
+display: inline-block;
+margin-top: 25px;
+}
+/* reference from: https://stackoverflow.com/questions/20803489/draw-a-curve-with-css */
+.mouth {
+  width: 15px; 
+  height: 3px;  
+  border: solid 5px white;
+  border-color: white transparent transparent transparent;
+  border-radius: 150%/50px 50px 0 0;
+  margin: 10px auto;
+  
+}
+footer{
+  text-align: center;
+  background-color: black;
+  color: white;
+  height: 40px; 
+}
+footer p{
+  padding: 10px 0;
+}
+@media screen and (max-width: 700px) {
+  
+}
+

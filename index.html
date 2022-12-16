@@ -8,32 +8,45 @@
     <title>Ball game</title>
   </head>
   <body>
+    <div id="container">
     <header>
       <h1>Ball game</h1>
+      <aside id="show_count"></aside>
     </header>
-    <aside id="show_count"></aside>
-    <main id="screen">
+    <div id="board-wrapper">
+    <main id="board">
       <div
         class="ball ball-1"
-        onmouseenter="disappear(0)"
-        onmouseleave="reset(0)"
+        onclick="onClick(0)"
       ></div>
       <div
         class="ball ball-2"
-        onmouseenter="disappear(1)"
-        onmouseleave="reset(1)"
+        onclick="onClick(1)"
       ></div>
       <div
         class="ball ball-3"
-        onmouseenter="disappear(2)"
-        onmouseleave="reset(2)"
+        onclick="onClick(2)"
       ></div>
-      <div id="game-over">Game Over</div>
     </main>
     <section>
       <button type="button" onclick="startGame()">START</button>
     </section>
-    <footer><p>&copy;ManaliPatel, 2022</p></footer>
-  </body>
+  </div>
+  <div id="container">
+  <main id="hidden">
+    <div id="game-over">
+      <div id="face">
+        <div class="eye"></div>
+        <div class="eye"></div>
+        <div class="mouth"></div>
+      </div>
+      <p>Game Over</p>
+      <button id="restart-btn">Restart</button>
+    </div>
+  </main>
+  </div>
+    <footer><p>&copy;ManaliPatel,Dec 2022</p></footer>
+  </div>
   <script src="/JS/index.js"></script>
+  </body>
 </html>
