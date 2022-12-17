@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/index.css" />
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="./CSS/index.css" >
     <title>Ball game</title>
   </head>
   <body>
     <div class="container">
-    <header>
-      <h1>Ball game</h1>
-      <aside id="show_count"></aside>
-    </header>
-    <div id="board-wrapper">
-    <main id="board">
-      <div
-        class="ball ball-1 hide"
-        onclick="onClick(0)"
-      ></div>
-      <div
-        class="ball ball-2 hide"
-        onclick="onClick(1)"
-      ></div>
-      <div
-        class="ball ball-3 hide"
-        onclick="onClick(2)"
-      ></div>
-    </main>
-    <section>
-      <button id="start-btn" type="button" onclick="startGame()">START</button>
-    </section>
-  </div>
-  <div class="container">
-  <main id="hidden">
-    <div id="game-over">
-      <div id="face">
-        <div class="eye">
-          <div class="dot">
+      <header>
+        <h1>Ball game</h1>
+        <aside id="show_count"></aside>
+      </header>
+      <main>
+        <div class="board">
+          <div class="ball ball-1 hide" onclick="onClick(0)"></div>
+          <div class="ball ball-2 hide" onclick="onClick(1)"></div>
+          <div class="ball ball-3 hide" onclick="onClick(2)"></div>
+          <div id="game-over" class="hide">
+            <div id="face">
+              <div class="eye">
+                <div class="dot"></div>
+              </div>
+              <div class="eye">
+                <div class="dot"></div>
+              </div>
+              <div class="mouth"></div>
+            </div>
+            <p id="gOver">Game Over</p>
           </div>
         </div>
-        <div class="eye">
-          <div class="dot">
-          </div>
-        </div>
-        <div class="mouth"></div>
-      </div>
-      <p id="gOver">Game Over</p>
-      <button id="restart-btn">Restart</button>
+        <button class="btn" id="start" type="button" onclick="startGame()">
+          START
+        </button>
+      </main>
+
+      <footer><p>&copy;ManaliPatel,Dec 2022</p></footer>
     </div>
-  </main>
-  </div>
-    <footer><p>&copy;ManaliPatel,Dec 2022</p></footer>
-  </div>
-  <script src="./JS/index.js"></script>
+    <script src="./JS/index.js"></script>
   </body>
 </html>

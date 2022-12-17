@@ -1,23 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Shojumaru&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Shojumaru&display=swap");
 
-*{
+* {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
-html{
+html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
-.container{
+.container {
   display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 }
-header{
-  font-family: 'Shojumaru', cursive;
+main {
+  text-align: center;
+}
+header {
+  font-family: "Shojumaru", cursive;
   background-color: black;
   color: white;
   padding: 15px 50px;
@@ -25,14 +30,21 @@ header{
   justify-content: space-between;
   align-items: center;
 }
-
-#board {
+.board {
   width: 600px;
   height: 549px;
   background-color: chocolate;
   border: black 50px solid;
   margin: 60px auto;
   position: relative;
+  text-align: center;
+}
+.btn {
+  width: 100px;
+  height: 30px;
+  background-color: chocolate;
+  border: black 2px solid;
+  margin-bottom: 20px;
 }
 .ball {
   width: 50px;
@@ -56,7 +68,6 @@ header{
 .hide {
   display: none;
 }
-
 @keyframes ball-move {
   0% {
     top: -10px;
@@ -66,52 +77,8 @@ header{
     top: calc(100% - 50px);
   }
 }
-
-#board-wrapper button {
-  width: 100px;
-  height: 30px;
-  background-color: chocolate;
-  border: black 2px solid;
-  margin-bottom: 20px;
-}
-section {
-  display: flex;
-  justify-content: center;
-}
-#hidden{
-  width: 100vw;
-  height:calc(100vh - 112.5px);
-  background-color: white;
-  color: black;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  text-align: center;
-}
-.gameover{
-  margin: 20px 0;
-  transform:scale(2);
-  transition: 1s;
-}
-
-#restart-btn{
-  margin: 15px;
-  padding: 7px 30px;
-  /* animation: blink 2s; */
-}
-/* @keyframes blink{
-  0%{
-    background-color: green;
-
-  }
-  50%{
-    background-color: violet;
-  }
-100%{
-  background-color: blue;
-}
-} */
-#face{
+/* hidden frame it will be appearing at game over */
+#face {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -119,15 +86,15 @@ section {
   box-shadow: 0 0 30px black;
   margin: 0 auto;
 }
-.eye{
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background-color: rgb(0, 0, 0);
-display: inline-block;
-margin-top: 25px;
+.eye {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  display: inline-block;
+  margin-top: 25px;
 }
-.dot{
+.dot {
   margin: 5px auto;
   width: 10px;
   height: 10px;
@@ -136,34 +103,67 @@ margin-top: 25px;
   background-color: rgb(166, 199, 34);
   animation: rotate 1s linear infinite;
 }
-@keyframes rotate{
-  from { transform: rotate(0deg) translatex(6px); }
-  to   { transform: rotate(360deg) translatex(6px); }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translatex(6px);
+  }
+  to {
+    transform: rotate(360deg) translatex(6px);
+  }
 }
-
 /* reference from: https://stackoverflow.com/questions/20803489/draw-a-curve-with-css */
 .mouth {
   width: 45px;
   border: solid 2px black;
-  border-color: black ;
+  border-color: black;
   border-radius: 50%;
   margin: 10px auto;
 }
-footer{
+footer {
   text-align: center;
   background-color: black;
   color: white;
-  height: 40px; 
+  height: 40px;
 }
-footer p{
-  padding: 10px 0;
+#gOver {
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: 600;
 }
+.game-over {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media screen and (max-width: 600px) {
-  #board {
+  h1 {
+    font-size: 24px;
+  }
+  .board {
     max-width: 90vw;
     height: 549px;
     background-color: chocolate;
     border: black 30px solid;
-
+  }
+  .ball {
+    width: 40px;
+    height: 40px;
+  }
+  footer {
+    font-size: 14px;
+  }
 }
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 22px;
+  }
+  .ball {
+    width: 35px;
+    height: 35px;
+  }
+  #show_count {
+    font-size: 14px;
+  }
 }

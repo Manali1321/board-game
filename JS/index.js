@@ -1,64 +1,70 @@
 var balls = document.querySelectorAll('.ball');
-var board = document.getElementById('board');
-var dispay_game_over = document.getElementById('hidden');
-var board_wrapper = document.getElementById('board-wrapper');
+var board = document.getElementsByClassName('board');
+var startbtn = document.getElementById('start');
+var gameOverDiv = document.getElementById('game-over')
+
 
 var ballCount = 0;
-var gameOver = false;
+
+balls.forEach(ball => {
+    ball.addEventListener('animationend', gameOverEvent)
+})
 
 
-balls[0].addEventListener('animationend',
-    gameOverEvent);
-balls[1].addEventListener('animationend', gameOverEvent);
-balls[2].addEventListener('animationend', gameOverEvent);
-
-dispay_game_over.style.display = 'none';
 function gameOverEvent() {
-    balls[0].style.animationPlayState = 'paused';
-    balls[1].style.animationPlayState = 'paused';
-    balls[2].style.animationPlayState = 'paused';
-    if (!gameOver) {
-        var gOver = document.getElementById('gOver');
-        board_wrapper.style.display = 'none';
-        dispay_game_over.style.display = 'flex';
-        gOver.classList.add('gameover');
-    }
+    balls.forEach(ball => {
+        ball.style.animationPlayState = 'paused';
+        ball.classList.add('hide')
+    })
+
+    gameOverDiv.classList.remove('hide')
+    gameOverDiv.classList.add('game-over')
+    startbtn.classList.remove('hide')
+
 }
 
 function startGame() {
-    var startbtn = document.getElementById('start-btn');
+    // reset score to zero
+    ballCount = 0
+    document.getElementById('show_count').innerText = `Score: ${ballCount}`
+
+    // show the ball and start animation
     balls.forEach(ball => {
-        ball.classList.add('ball-move');
         ball.classList.remove('hide');
+        ball.classList.add('ball-move');
+        ball.style.animationPlayState = 'running'
         ball.style.left = Math.floor(Math.random() * 90 + 1) + '%';
     });
-    startbtn.style.display = 'none';
+
+    // hide the game over div
+    gameOverDiv.classList.add('hide')
+    gameOverDiv.classList.remove('game-over')
+
+    // hide the start button
+    startbtn.classList.add('hide')
 }
+
 function reset(num) {
+    // remove hideen balls and animation on click
     balls[num].classList.remove('hide');
     balls[num].classList.add('ball-move');
     balls[num].style.left = Math.floor(Math.random() * 90 + 1) + '%';
-    console.log(balls[num].style.left);
+    // adding ball count every time clicked on it
     ballCount += 1;
-    console.log(ballCount);
     var counter = '';
     counter += `Score: ${ballCount}`
     document.getElementById('show_count').innerText = counter;
 }
 function disappear(num) {
-
+    // when clicked happen on ball hide and coming from top
     balls[num].classList.add('hide');
     balls[num].classList.remove('ball-move');
 }
-var restart_btn = document.getElementById('restart-btn');
 
+// two events fire at one time so set time out
 function onClick(num) {
     disappear(num)
     setTimeout(() => {
         reset(num)
     }, 10)
-}
-
-restart_btn.onclick = function () {
-    window.location.reload();
 }
