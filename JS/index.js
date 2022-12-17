@@ -2,8 +2,11 @@ var balls = document.querySelectorAll('.ball');
 var board = document.getElementById('board');
 var dispay_game_over = document.getElementById('hidden');
 var board_wrapper = document.getElementById('board-wrapper');
+
 var ballCount = 0;
 var gameOver = false;
+
+
 balls[0].addEventListener('animationend',
     gameOverEvent);
 balls[1].addEventListener('animationend', gameOverEvent);
@@ -15,19 +18,21 @@ function gameOverEvent() {
     balls[1].style.animationPlayState = 'paused';
     balls[2].style.animationPlayState = 'paused';
     if (!gameOver) {
+        var gOver = document.getElementById('gOver');
         board_wrapper.style.display = 'none';
         dispay_game_over.style.display = 'flex';
+        gOver.classList.add('gameover');
     }
 }
 
 function startGame() {
-
-    console.log(board.width);
+    var startbtn = document.getElementById('start-btn');
     balls.forEach(ball => {
         ball.classList.add('ball-move');
         ball.classList.remove('hide');
         ball.style.left = Math.floor(Math.random() * 90 + 1) + '%';
     });
+    startbtn.style.display = 'none';
 }
 function reset(num) {
     balls[num].classList.remove('hide');

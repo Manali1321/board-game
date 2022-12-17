@@ -16,20 +16,20 @@
     <div id="board-wrapper">
     <main id="board">
       <div
-        class="ball ball-1"
+        class="ball ball-1 hide"
         onclick="onClick(0)"
       ></div>
       <div
-        class="ball ball-2"
+        class="ball ball-2 hide"
         onclick="onClick(1)"
       ></div>
       <div
-        class="ball ball-3"
+        class="ball ball-3 hide"
         onclick="onClick(2)"
       ></div>
     </main>
     <section>
-      <button type="button" onclick="startGame()">START</button>
+      <button id="start-btn" type="button" onclick="startGame()">START</button>
     </section>
   </div>
   <div class="container">
@@ -46,7 +46,7 @@
         </div>
         <div class="mouth"></div>
       </div>
-      <p>Game Over</p>
+      <p id="gOver">Game Over</p>
       <button id="restart-btn">Restart</button>
     </div>
   </main>
