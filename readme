@@ -1,0 +1,14 @@
+Board-Game
+
+Balls are falling from top to bottom at random width from Top; onClick on ball its disappear and again falling from top at random width.
+
+
+Work on animation; on game over smily coming with CSS animation.
+
+
+
+Language used: HTML5, CSS3, Javascript
+
+
+
+Like website: https://manali1321.github.io/board-game/
